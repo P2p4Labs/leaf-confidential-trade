@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
-import { Monitor, Bell, Clock, Shield, CheckCircle, AlertCircle } from "lucide-react";
+import { Monitor, Bell, Clock, Lock, CheckCircle, AlertCircle } from "lucide-react";
 
 interface MonitorDialogProps {
   credit: {
@@ -46,7 +46,7 @@ const MonitorDialog = ({ credit, children }: MonitorDialogProps) => {
     switch (credit.status) {
       case "encrypted":
         return {
-          icon: <Shield className="w-4 h-4" />,
+          icon: <Lock className="w-4 h-4" />,
           message: "Credit is encrypted and awaiting initial verification",
           color: "text-muted-foreground"
         };
@@ -158,7 +158,7 @@ const MonitorDialog = ({ credit, children }: MonitorDialogProps) => {
           </div>
 
           <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-            <Shield className="w-3 h-3" />
+            <Lock className="w-3 h-3" />
             <span>Monitoring uses encrypted channels for privacy</span>
           </div>
         </div>
