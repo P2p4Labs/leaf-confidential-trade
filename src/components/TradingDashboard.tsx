@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Leaf, Lock, CheckCircle, Clock, TrendingUp, Globe } from "lucide-react";
+import { Leaf, Lock, CheckCircle, Clock, TrendingUp, Globe, Zap, Database } from "lucide-react";
 import holographicLeaf from "@/assets/holographic-leaf.png";
 import TradeDialog from "@/components/TradeDialog";
 import MonitorDialog from "@/components/MonitorDialog";

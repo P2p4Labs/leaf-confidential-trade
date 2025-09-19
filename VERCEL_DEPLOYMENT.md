@@ -1,80 +1,88 @@
-# Vercel Deployment Guide for Leaf Confidential Trade
+# 🚀 Vercel Deployment Guide
 
-## Prerequisites
+> **Professional Deployment for Leaf Confidential Trade**
 
-- GitHub account with access to the repository
+## 📋 Prerequisites
+
+- GitHub account with repository access
 - Vercel account (free tier available)
-- Node.js 18+ installed locally (for testing)
+- Node.js 18+ (for local testing)
 
-## Step-by-Step Deployment Instructions
+## 🛠️ Step-by-Step Deployment
 
-### 1. Prepare the Repository
+### 1. Repository Preparation
 
-The repository is already configured and ready for deployment. All necessary files are in place:
+The repository is pre-configured and ready for deployment:
 - ✅ Package.json with correct dependencies
-- ✅ Environment variables configured
-- ✅ Build scripts ready
-- ✅ No lovable dependencies
+- ✅ Environment variables template
+- ✅ Build scripts configured
+- ✅ No external dependencies
 
-### 2. Connect to Vercel
+### 2. Vercel Connection
 
-1. **Visit Vercel Dashboard**
-   - Go to [vercel.com](https://vercel.com)
-   - Sign in with your GitHub account
+1. **Access Vercel Dashboard**
+   - Navigate to [vercel.com](https://vercel.com)
+   - Sign in with GitHub account
 
 2. **Import Project**
    - Click "New Project" or "Import Project"
    - Select "Import Git Repository"
-   - Choose `P2p4Labs/leaf-confidential-trade` from the list
+   - Choose `P2p4Labs/leaf-confidential-trade`
    - Click "Import"
 
-### 3. Configure Project Settings
+### 3. Project Configuration
 
-1. **Framework Preset**
-   - Framework: `Vite`
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-   - Install Command: `npm install`
+#### Framework Settings
+- **Framework**: `Vite`
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Install Command**: `npm install`
 
-2. **Environment Variables**
-   Add the following environment variables in Vercel dashboard:
-   ```
-   VITE_CHAIN_ID=11155111
-   VITE_RPC_URL=https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990
-   VITE_WALLET_CONNECT_PROJECT_ID=2ec9743d0d0cd7fb94dee1a7e6d33475
-   VITE_INFURA_API_KEY=b18fb7e6ca7045ac83c41157ab93f990
-   ```
+#### Environment Variables
+Configure the following variables in Vercel dashboard:
 
-3. **Build Settings**
-   - Node.js Version: `18.x`
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
+```env
+# Network Configuration
+VITE_CHAIN_ID=11155111
+VITE_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
 
-### 4. Deploy the Project
+# Wallet Connect
+VITE_WALLET_CONNECT_PROJECT_ID=YOUR_PROJECT_ID
+
+# Optional Configuration
+VITE_INFURA_API_KEY=YOUR_INFURA_KEY
+```
+
+#### Build Settings
+- **Node.js Version**: `18.x`
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+
+### 4. Deployment Process
 
 1. **Initial Deployment**
    - Click "Deploy" button
-   - Wait for the build process to complete (2-3 minutes)
-   - Note the deployment URL provided
+   - Monitor build process (2-3 minutes)
+   - Note the deployment URL
 
-2. **Verify Deployment**
-   - Visit the provided URL
-   - Test wallet connection functionality
-   - Verify all components load correctly
+2. **Verification**
+   - Visit the deployment URL
+   - Test wallet connection
+   - Verify all components load
 
 ### 5. Custom Domain (Optional)
 
-1. **Add Custom Domain**
+1. **Domain Configuration**
    - Go to Project Settings → Domains
    - Click "Add Domain"
    - Enter your custom domain
-   - Follow DNS configuration instructions
+   - Follow DNS setup instructions
 
 2. **SSL Certificate**
-   - Vercel automatically provides SSL certificates
-   - HTTPS will be enabled by default
+   - Automatic SSL provided by Vercel
+   - HTTPS enabled by default
 
-### 6. Environment-Specific Configurations
+### 6. Environment Management
 
 #### Development Environment
 ```bash
@@ -83,75 +91,92 @@ npm run dev
 ```
 
 #### Production Environment
-- All environment variables are configured in Vercel dashboard
-- Build process is automated on git push
-- Automatic deployments on main branch updates
+- Environment variables configured in Vercel
+- Automatic builds on git push
+- Branch-based deployments
 
-### 7. Monitoring and Maintenance
+### 7. Monitoring & Maintenance
 
-1. **Deployment Monitoring**
-   - Check Vercel dashboard for deployment status
-   - Monitor build logs for any errors
-   - Set up notifications for failed deployments
+#### Deployment Monitoring
+- Check Vercel dashboard for status
+- Monitor build logs for errors
+- Set up deployment notifications
 
-2. **Performance Monitoring**
-   - Use Vercel Analytics (optional)
-   - Monitor Core Web Vitals
-   - Check for any runtime errors
+#### Performance Monitoring
+- Use Vercel Analytics (optional)
+- Monitor Core Web Vitals
+- Check runtime errors
 
 ### 8. Troubleshooting
 
-#### Common Issues:
+#### Common Issues
 
-1. **Build Failures**
-   - Check environment variables are set correctly
-   - Verify all dependencies are in package.json
-   - Check build logs in Vercel dashboard
+**Build Failures**
+- Verify environment variables
+- Check all dependencies in package.json
+- Review build logs in Vercel dashboard
 
-2. **Wallet Connection Issues**
-   - Verify WalletConnect Project ID is correct
-   - Check RPC URL configuration
-   - Ensure network settings match Sepolia testnet
+**Wallet Connection Issues**
+- Confirm WalletConnect Project ID
+- Verify RPC URL configuration
+- Check network settings
 
-3. **Environment Variables**
-   - Double-check all VITE_ prefixed variables are set
-   - Ensure no typos in variable names
-   - Verify values are correct for production
+**Environment Variables**
+- Ensure all VITE_ variables are set
+- Check for typos in variable names
+- Verify production values
 
 ### 9. Post-Deployment Checklist
 
 - [ ] Application loads without errors
-- [ ] Wallet connection works (Rainbow, MetaMask, etc.)
-- [ ] All UI components render correctly
-- [ ] Environment variables are properly configured
-- [ ] HTTPS is enabled
-- [ ] Custom domain (if used) is working
-- [ ] Performance is acceptable
+- [ ] Wallet connection functional
+- [ ] UI components render correctly
+- [ ] Environment variables configured
+- [ ] HTTPS enabled
+- [ ] Custom domain working (if used)
+- [ ] Performance acceptable
 
 ### 10. Continuous Deployment
 
-The project is configured for automatic deployments:
-- Push to `main` branch triggers automatic deployment
-- All environment variables are preserved
-- Build process is optimized for production
+**Automatic Deployment**
+- Push to `main` branch triggers deployment
+- Environment variables preserved
+- Optimized build process
 
-## Support
+**Manual Deployment**
+- Available through Vercel dashboard
+- Branch-specific deployments
+- Preview deployments for testing
 
-For issues with deployment:
+## 🔧 Advanced Configuration
+
+### Build Optimization
+- Vite build optimizations enabled
+- Tree shaking for smaller bundles
+- Code splitting for better performance
+
+### Security Configuration
+- Environment variables encrypted
+- No sensitive data in client code
+- HTTPS enforcement
+
+## 📞 Support
+
+For deployment issues:
 1. Check Vercel documentation
-2. Review build logs in Vercel dashboard
-3. Verify all environment variables are set
-4. Test locally with `npm run build` and `npm run preview`
+2. Review build logs
+3. Verify environment variables
+4. Test locally with `npm run build`
 
-## Security Notes
+## 🔐 Security Notes
 
-- Environment variables are encrypted in Vercel
-- No sensitive data is exposed in client-side code
-- All API keys are properly configured
-- HTTPS is enforced by default
+- Environment variables encrypted in Vercel
+- No sensitive data exposed client-side
+- API keys properly configured
+- HTTPS enforced by default
 
 ---
 
-**Deployment URL**: Will be provided after successful deployment
-**Last Updated**: September 2024
+**Deployment Status**: ✅ Ready for Production  
+**Last Updated**: September 2024  
 **Maintainer**: P2p4Labs

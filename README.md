@@ -1,110 +1,240 @@
-# Leaf Confidential Trade
+# 🌿 Leaf Confidential Trade
 
-A confidential trading platform built with React, TypeScript, and FHE (Fully Homomorphic Encryption) technology.
+> **Next-Generation FHE Trading Platform**  
+> *Where Privacy Meets Performance*
 
-## Features
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 
-- **Confidential Trading**: Secure and private trading operations using FHE encryption
-- **Real-time Monitoring**: Live dashboard for tracking trading activities
-- **Wallet Integration**: Support for multiple wallet providers including Rainbow, MetaMask, and WalletConnect
-- **FHE-Protected Data**: All sensitive trading data is encrypted using fully homomorphic encryption
-- **Modern UI**: Built with shadcn/ui components and Tailwind CSS
+## 🚀 Overview
 
-## Technologies Used
+Leaf Confidential Trade is a cutting-edge trading platform that leverages **Fully Homomorphic Encryption (FHE)** to ensure complete privacy in financial transactions. Built on modern web technologies, it provides a secure, scalable, and user-friendly environment for confidential trading operations.
 
-- **Frontend**: React 18, TypeScript, Vite
-- **UI Components**: shadcn/ui, Radix UI, Tailwind CSS
-- **Wallet Integration**: RainbowKit, Wagmi, Viem
-- **Blockchain**: Ethereum (Sepolia testnet)
-- **Encryption**: FHE (Fully Homomorphic Encryption) via Zama's fhevm
+### ✨ Key Features
 
-## Getting Started
+- **🔐 FHE Encryption**: All sensitive data encrypted using Zama's fhevm
+- **🌐 Multi-Wallet Support**: Rainbow, MetaMask, WalletConnect integration
+- **⚡ Real-time Trading**: Live order book and market data
+- **🛡️ Privacy-First**: Zero-knowledge trading operations
+- **📱 Responsive Design**: Optimized for all devices
+- **🔗 Blockchain Integration**: Ethereum Sepolia testnet support
+
+## 🏗️ Architecture
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │   Smart         │    │   FHE           │
+│   (React/Vite)  │◄──►│   Contracts     │◄──►│   Encryption    │
+│                 │    │   (Solidity)    │    │   (Zama)        │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Wallet        │    │   Order Book    │    │   Privacy       │
+│   Integration   │    │   Management    │    │   Protection    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **UI Library**: shadcn/ui + Radix UI
+- **Styling**: Tailwind CSS
+- **State Management**: TanStack Query
+
+### Blockchain
+- **Network**: Ethereum Sepolia Testnet
+- **Wallet Integration**: RainbowKit + Wagmi + Viem
+- **Encryption**: FHE via Zama's fhevm
+- **Smart Contracts**: Solidity ^0.8.24
+
+### Development
+- **Package Manager**: npm
+- **Linting**: ESLint
+- **Type Checking**: TypeScript
+- **Version Control**: Git
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
 - Node.js 18+ 
 - npm or yarn
 - Git
+- Modern web browser
 
 ### Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/P2p4Labs/leaf-confidential-trade.git
-cd leaf-confidential-trade
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/P2p4Labs/leaf-confidential-trade.git
+   cd leaf-confidential-trade
+   ```
 
-2. Install dependencies:
-```bash
-npm install
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-3. Set up environment variables:
-```bash
-cp .env.example .env
-```
+3. **Configure environment**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
 
-4. Start the development server:
-```bash
-npm run dev
-```
+4. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-## Environment Variables
+5. **Open in browser**
+   ```
+   http://localhost:8080
+   ```
+
+## ⚙️ Configuration
+
+### Environment Variables
 
 Create a `.env` file with the following variables:
 
 ```env
 # Network Configuration
-NEXT_PUBLIC_CHAIN_ID=11155111
-NEXT_PUBLIC_RPC_URL=https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990
+VITE_CHAIN_ID=11155111
+VITE_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
 
-# Wallet Connect Configuration
-NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=2ec9743d0d0cd7fb94dee1a7e6d33475
+# Wallet Connect
+VITE_WALLET_CONNECT_PROJECT_ID=YOUR_PROJECT_ID
 
-# Infura Configuration
-NEXT_PUBLIC_INFURA_API_KEY=b18fb7e6ca7045ac83c41157ab93f990
-NEXT_PUBLIC_RPC_URL=https://1rpc.io/sepolia
+# Optional: Custom RPC
+VITE_RPC_URL=https://1rpc.io/sepolia
 ```
 
-## Project Structure
+### Wallet Setup
+
+The platform supports multiple wallet providers:
+- **Rainbow Wallet**: Mobile-first crypto wallet
+- **MetaMask**: Browser extension wallet
+- **WalletConnect**: Universal wallet connector
+
+## 📁 Project Structure
 
 ```
-src/
-├── components/          # React components
-│   ├── ui/             # shadcn/ui components
-│   ├── Header.tsx      # Main header component
-│   ├── Footer.tsx      # Footer component
-│   ├── TradingDashboard.tsx
-│   ├── TradeDialog.tsx
-│   └── MonitorDialog.tsx
-├── pages/              # Page components
-├── hooks/              # Custom React hooks
-├── lib/                # Utility functions
-└── assets/             # Static assets
+leaf-confidential-trade/
+├── 📁 contracts/              # Smart contracts
+│   └── LeafConfidentialTrade.sol
+├── 📁 src/
+│   ├── 📁 components/          # React components
+│   │   ├── 📁 ui/             # shadcn/ui components
+│   │   ├── Header.tsx         # Main header
+│   │   ├── TradingDashboard.tsx
+│   │   └── TradeDialog.tsx
+│   ├── 📁 lib/                # Utilities
+│   │   ├── wallet.ts          # Wallet configuration
+│   │   └── utils.ts           # Helper functions
+│   ├── 📁 hooks/              # Custom hooks
+│   └── 📁 assets/             # Static assets
+├── 📄 package.json            # Dependencies
+├── 📄 vite.config.ts          # Vite configuration
+└── 📄 tailwind.config.ts      # Tailwind CSS config
 ```
 
-## Deployment
+## 🔧 Development
 
-### Vercel Deployment
+### Available Scripts
 
-1. Connect your GitHub repository to Vercel
-2. Set up environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+```bash
+# Development
+npm run dev          # Start dev server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+
+# Testing
+npm run test         # Run tests (when implemented)
+```
+
+### Code Quality
+
+- **ESLint**: Code linting and formatting
+- **TypeScript**: Type safety and IntelliSense
+- **Prettier**: Code formatting (recommended)
+- **Husky**: Git hooks (optional)
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. **Connect Repository**
+   - Import project from GitHub
+   - Configure build settings
+
+2. **Set Environment Variables**
+   - Add all required environment variables
+   - Configure network settings
+
+3. **Deploy**
+   - Automatic deployment on push
+   - Manual deployment available
 
 ### Manual Deployment
 
 ```bash
+# Build the project
 npm run build
-npm run preview
+
+# Deploy to your hosting provider
+# Upload the 'dist' folder
 ```
 
-## Contributing
+## 🔐 Security Features
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+- **FHE Encryption**: All trading data encrypted
+- **Zero-Knowledge**: No sensitive data exposure
+- **Wallet Security**: Multiple provider support
+- **Network Security**: Testnet for safe development
+- **Code Security**: No direct transfer functions
 
-## License
+## 🤝 Contributing
 
-MIT License - see LICENSE file for details
+We welcome contributions! Please see our contributing guidelines:
+
+1. **Fork the repository**
+2. **Create a feature branch**
+3. **Make your changes**
+4. **Add tests if applicable**
+5. **Submit a pull request**
+
+### Development Guidelines
+
+- Follow TypeScript best practices
+- Use meaningful commit messages
+- Test your changes thoroughly
+- Update documentation as needed
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Zama**: FHE encryption technology
+- **Rainbow**: Wallet integration
+- **Vercel**: Deployment platform
+- **shadcn/ui**: UI component library
+
+## 📞 Support
+
+- **Documentation**: Check the docs folder
+- **Issues**: GitHub Issues
+- **Discussions**: GitHub Discussions
+
+---
+
+**Built with ❤️ by the P2p4Labs team**
+
+*Empowering the future of confidential trading*
